@@ -2,10 +2,11 @@
 
 A Snakemake pipeline to prepare, annotate and eventually impute SNPs files from [23andMe](https://www.23andme.com/en-int/) genotyping platform.
 
-## Main fetures
+## Main features
 
 - Imputation 
 - Functional annotation
+- Correlation with somatic/disease databases
 
 ## Imputation
 The genotyping information within the file usually partially covers the genome and is therefore 
