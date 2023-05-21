@@ -16,6 +16,7 @@ Due to the success of genomic population studies across several hundreds of huma
 information tends to be shared within the same population. We can use that information up to certain degree of confidence to 
 amplify the genetic markers from a dataset. This process, called imputation, can use information from projects such as HapMap 
 or 1000Genomes to make predictions on genotypes not included in genotyping arrays.
+More details about imputation step can be found in the [wiki](https://github.com/mdelcorvo/impute23/wiki).
 
 ## SNP effects
 Genetic variations in human genomes, especially the very common single nucleotide polymorphisms (SNPs), are correlated with
