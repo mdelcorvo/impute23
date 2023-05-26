@@ -1,0 +1,4 @@
+Config file config/config.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+CyclicGraphException in line 105 of /home/mdelcorvo/impute23/rules/impute.smk:
+Cyclic dependency on rule oxford2vcf.
