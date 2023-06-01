@@ -1,6 +1,6 @@
-# impute23
+# impute23 <img src="img/meta-logo.png" width="200" align="right" />
 
-A Snakemake pipeline to prepare, annotate and eventually impute SNPs files from [23andMe](https://www.23andme.com/en-int/) genotyping platform.
+A Snakemake workflow to prepare, annotate and impute SNPs files from [23andMe](https://www.23andme.com/en-int/) genotyping platform.
 
 ## Main features
 

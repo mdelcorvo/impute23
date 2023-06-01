@@ -1,0 +1,29 @@
+Config file config/config.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+WorkflowError:
+WorkflowError:
+    WorkflowError:
+        WorkflowError:
+            MissingInputException: Missing input files for rule plink_editing:
+                output: results/example_genome.bim, results/example_genome.original.vcf
+                affected files:
+                    data/example_genome.txt
+            MissingInputException: Missing input files for rule plink_editing:
+                output: results/example_genome.bim, results/example_genome.original.vcf
+                affected files:
+                    data/example_genome.txt
+        MissingInputException: Missing input files for rule plink2oxford:
+            output: results/example_genome.original.COSMIC.gen
+            wildcards: name=example_genome.original, chr=COSMIC
+            affected files:
+                results/example_genome.original.bim
+    MissingInputException: Missing input files for rule plink2oxford:
+        output: results/example_genome.original.ClinVar.gen
+        wildcards: name=example_genome.original, chr=ClinVar
+        affected files:
+            results/example_genome.original.bim
+MissingInputException: Missing input files for rule plink2oxford:
+    output: results/example_genome.original.Annot.gen
+    wildcards: name=example_genome.original, chr=Annot
+    affected files:
+        results/example_genome.original.bim
