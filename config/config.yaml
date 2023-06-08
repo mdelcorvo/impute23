@@ -1,28 +1,30 @@
 # snakemake -j 1 --use-conda
 ## Config file for setting options
 
-SAMPLE: 'example_genome.txt'
-NAME: 'example_genome'
-
-CHR: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21" ,"22"]
-DATAIN: 'data'
-DATAOUT: "results"
-DB: "database"
-
-COSMIC: "resources/database/homo_sapiens_somatic.vcf.gz"
-CLINVAR: "resources/database/clinvar.vcf.gz"
-GWAS: "resources/database/gwas_catalog_v1.0-associations_e105_r2022-04-07.tsv"
 
 ############################################
 ## ADDITIONAL parameters
 ############################################
 
 ## Number of cores
-ncores: 16
+ncores: 8
 
 ## Genome reference
 ref:
 ## ensembl release
   release: 109  # The most recent release of human genome is 104 (May 2023)
 ## genome build 
-  build: GRCh38 # GRCh38/GRCh37
+  build: hg19 # hg38/hg19
+
+database_url:
+  GRCh38:
+    ClinVar: "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz"
+    Cosmic: "http://ftp.ensembl.org/pub/current_variation/vcf/homo_sapiens/homo_sapiens_somatic.vcf.gz"
+    reference_data: ""
+  GRCh37:
+    ClinVar: "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz"
+    Cosmic: "http://ftp.ensembl.org/pub/grch37/current/variation/vcf/homo_sapiens/homo_sapiens_somatic.vcf.gz"
+    reference_data: "https://mathgen.stats.ox.ac.uk/impute/ALL_1000G_phase1integrated_v3_impute.tgz"
+    
+db: "database"
+input: "input/metafile.txt"

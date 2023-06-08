@@ -6,27 +6,23 @@
 # This file may not be copied, modified, or distributed
 # except according to those terms.
 
+import pandas as pd
+from snakemake.utils import validate
+from snakemake.utils import min_version
+samples = pd.read_table(config["input"], dtype=str).set_index(["sample"], drop=False)
+
 
 configfile: 'config/config.yaml'
-SAMPLE = config['SAMPLE']
-NAME = config['NAME']
-DATAIN = config['DATAIN']
-DATAOUT = config['DATAOUT']
-CHR = config['CHR']
+db = config['db']
+ref = config["ref"]["build"]
 
-## File extensions
-COSMIC =  config['COSMIC']
-CLINVAR =  config['CLINVAR']
-GWAS =  config['GWAS']
 
 rule all:
     input:
-        expand("results/{name}.original.Annot.vcf",name=NAME),
-        expand("results/{name}.imputed.Annot.vcf",name=NAME)
+        expand("database/{ref}/COSMIC.vcf.gz.tbi", ref=config["ref"]["build"])
         
-        
-        
-##### Modules #####
 
-include: "rules/impute.smk"
-include: "rules/annotation.smk"
+##### Modules #####
+include: "rules/common.smk"
+include: "rules/database.smk"
+
