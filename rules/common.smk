@@ -15,3 +15,4 @@ def get_reference(wildcards):
         return config["database_url"]["GRCh38"]["reference_data"] # needs to be added
     else:
         return config["database_url"]["GRCh37"]["reference_data"]       
+

@@ -3,3 +3,5 @@ channels:
     - conda-forge
 dependencies:
     - plink=1.90b6.18
+    - r-base
+    - r-data.table
